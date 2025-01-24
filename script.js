@@ -12,20 +12,16 @@ function updateCart() {
     const cartButton = document.getElementById("cart-button");
     const totalPrice = document.getElementById("total-price");
 
-    // Clear existing cart items
     cartItems.innerHTML = "";
 
-    // Add updated cart items to the modal
     cart.forEach(item => {
         const li = document.createElement("li");
         li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
         cartItems.appendChild(li);
     });
 
-    // Update the total price
     totalPrice.textContent = `Total: $${total.toFixed(2)}`;
 
-    // Update the cart button text
     cartButton.innerHTML = `<span>Cart (${cart.length})</span><i class="fas fa-shopping-cart"></i>`;
 }
 
